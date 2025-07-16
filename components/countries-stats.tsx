@@ -1,13 +1,7 @@
 "use client";
 
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { TrendingUp } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { LucideChevronRight, TrendingUp } from "lucide-react";
 import {
   BarChart,
   Bar,
@@ -18,6 +12,7 @@ import {
   LabelList,
 } from "recharts";
 import ReactCountryFlag from "react-country-flag";
+import { Button } from "./ui/button";
 
 interface CountryStatProps {
   title: string;
@@ -30,14 +25,15 @@ interface CountryStatProps {
 
 export default function CountryStats({ title, countries }: CountryStatProps) {
   return (
-    <Card className="bg-[#f7faf7] rounded-xl">
+    <Card className="bg-primary rounded-[2rem] border-transparent">
       <CardHeader className="flex flex-row items-center justify-between">
-        <CardTitle className="text-[#032900] text-lg font-semibold">
+        <CardTitle className="text-dark-green text-lg font-semibold">
           {title}
         </CardTitle>
-        <button className="text-[#032900] border border-[#d1d5db] rounded-full text-xs px-4 py-1 flex items-center gap-1 hover:bg-[#f3f4f6] transition">
-          VIEW ALL <span className="text-sm">{">"}</span>
-        </button>
+        <Button className="text-light-green shadow-none !bg-none border border-[#d1d5db] rounded-full text-xs px-4 py-1 flex items-center gap-1 hover:bg-[#f3f4f6] transition ">
+          VIEW ALL{" "}
+          <LucideChevronRight size={16} className="text-lighter-green" />
+        </Button>
       </CardHeader>
 
       <CardContent>
@@ -97,7 +93,7 @@ export default function CountryStats({ title, countries }: CountryStatProps) {
                 const { country, visitors } = payload[0].payload;
                 return (
                   <div className="bg-white shadow-md border text-sm p-2 rounded-md">
-                    <p className="font-medium">{country}</p>
+                    <p className="font-normal texr-[18px]">{country}</p>
                     <p>{visitors} visitors</p>
                   </div>
                 );
@@ -105,9 +101,9 @@ export default function CountryStats({ title, countries }: CountryStatProps) {
             />
             <Bar
               dataKey="visitors"
-              fill="#D9EAD3"
+              fill="#DFE5DA"
               radius={[4, 4, 4, 4]}
-              barSize={10}
+              barSize={8}
             >
               <LabelList
                 dataKey="visitors"
@@ -118,15 +114,6 @@ export default function CountryStats({ title, countries }: CountryStatProps) {
           </BarChart>
         </ResponsiveContainer>
       </CardContent>
-
-      <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex gap-2 leading-none font-medium text-[#032900]">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-        </div>
-        <div className="text-gray-500 leading-none">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter>
     </Card>
   );
 }

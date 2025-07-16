@@ -20,6 +20,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 import { menuItems } from "@/const/menuItems";
+import { CheckIcon } from "./ui/Icon";
 
 export function AppSidebar() {
   const { isMobile, setOpenMobile } = useSidebar();
@@ -40,8 +41,12 @@ export function AppSidebar() {
             </div>
 
             <div className="text-white">
-              <p className="font-semibold text-sm">PiggyCanvas Inc</p>
-              <p>Sophia Williamson</p>
+              <p className="font-semibold text-[1rem] flex items-center gap-2">
+                PiggyCanvas Inc <CheckIcon className="w-4 h-4" />
+              </p>
+              <p className="text-[.75rem] text-lighter-green">
+                Sophia Williamson
+              </p>
             </div>
           </div>
           {isMobile && (

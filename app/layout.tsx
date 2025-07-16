@@ -55,9 +55,9 @@ export default function RootLayout({
           <div className="flex min-h-screen w-full">
             <AppSidebar />
             <main className="flex-1 overflow-hidden">
-              <div className="flex flex-col min-h-screen">
+              <div className="flex flex-col min-h-screen  xl:px-12">
                 <AppBar />
-                {children}
+                <div className="py-12">{children}</div>
               </div>
             </main>
           </div>

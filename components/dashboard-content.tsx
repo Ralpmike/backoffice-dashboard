@@ -7,7 +7,7 @@ import { chartData } from "@/const/chartData";
 
 export function DashboardContent() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen">
       {/* Main Content */}
       <div className="flex-1 p-6 space-y-6 overflow-auto">
         {/* Metrics Grid */}
