@@ -29,11 +29,11 @@ export function AppSidebar() {
     <Sidebar className="border-r-0  !bg-[#032900]">
       <SidebarHeader className="p-6 flex">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <div className="w-12 h-12 bg-white rounded-full overflow-hidden flex items-center justify-center">
               <Image
                 src="/assets/images/jeffery.jpg"
-                alt="Jeffery"
+                alt="Jeffery's image"
                 width={48}
                 height={48}
                 className="object-cover w-full h-full object-[100%_5%]"
@@ -41,12 +41,10 @@ export function AppSidebar() {
             </div>
 
             <div className="text-white">
-              <p className="font-semibold text-[1rem] flex items-center gap-2">
+              <p className="font-semibold text-lg flex items-center gap-1">
                 PiggyCanvas Inc <CheckIcon className="w-4 h-4" />
               </p>
-              <p className="text-[.75rem] text-lighter-green">
-                Sophia Williamson
-              </p>
+              <p className="text-sm text-lighter-green">Sophia Williamson</p>
             </div>
           </div>
           {isMobile && (

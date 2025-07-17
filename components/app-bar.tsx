@@ -11,7 +11,7 @@ function AppBar() {
         {/* Mobile Sidebar Trigger */}
         <SidebarTrigger className="md:hidden" />
         <div>
-          <h1 className="text-[2rem] font-semibold text-gray-900">
+          <h1 className="text-[1.25rem] sm:text-[1.6rem] md:text-[2rem] font-semibold text-gray-900">
             Good morning, Sophia
           </h1>
         </div>

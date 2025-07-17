@@ -13,6 +13,7 @@ import {
 } from "recharts";
 import ReactCountryFlag from "react-country-flag";
 import { Button } from "./ui/button";
+import { Popover } from "@radix-ui/react-popover";
 
 interface CountryStatProps {
   title: string;
@@ -30,10 +31,12 @@ export default function CountryStats({ title, countries }: CountryStatProps) {
         <CardTitle className="text-dark-green text-lg font-semibold">
           {title}
         </CardTitle>
-        <Button className="text-light-green shadow-none !bg-none border border-[#d1d5db] rounded-full text-xs px-4 py-1 flex items-center gap-1 hover:bg-[#f3f4f6] transition ">
-          VIEW ALL{" "}
-          <LucideChevronRight size={16} className="text-lighter-green" />
-        </Button>
+        <Popover>
+          <Button className="text-light-green shadow-none !bg-none border border-[#d1d5db] rounded-full text-xs px-4 py-1 flex items-center gap-1 hover:bg-[#f3f4f6] transition ">
+            VIEW ALL{" "}
+            <LucideChevronRight size={16} className="text-lighter-green" />
+          </Button>
+        </Popover>
       </CardHeader>
 
       <CardContent>
