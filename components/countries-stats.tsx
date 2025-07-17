@@ -62,7 +62,7 @@ export default function CountryStats({ title, countries }: CountryStatProps) {
                 );
                 return (
                   <g transform={`translate(${x},${y})`}>
-                    <foreignObject width={140} height={40} x={-110} y={-15}>
+                    <foreignObject width={150} height={40} x={-96} y={-15}>
                       <div
                         style={{
                           display: "flex",
