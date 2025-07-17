@@ -1,7 +1,6 @@
 import React from "react";
 import { SidebarTrigger } from "./ui/sidebar";
 import { Button } from "./ui/button";
-import { Bell } from "lucide-react";
 import { NotificationIcon } from "./ui/Icon";
 
 function AppBar() {

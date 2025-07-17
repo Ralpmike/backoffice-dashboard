@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { metricsData } from "@/const/chartData";
 
-export function MetricsGrid() {
+export default function MetricsGrid() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
       {metricsData.map((metric, index) => (

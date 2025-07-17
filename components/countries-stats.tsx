@@ -33,7 +33,8 @@ export default function CountryStats({ title, countries }: CountryStatProps) {
         </CardTitle>
         <Popover>
           <Button
-            aria-label="View all"
+            aria-label="View all countries"
+            tabIndex={0}
             className="text-light-green shadow-none !bg-none border border-[#d1d5db] rounded-full text-xs px-4 py-1 flex items-center gap-1 hover:bg-[#f3f4f6] transition "
           >
             VIEW ALL{" "}
@@ -42,7 +43,7 @@ export default function CountryStats({ title, countries }: CountryStatProps) {
         </Popover>
       </CardHeader>
 
-      <CardContent>
+      <CardContent className="sm:px-2">
         <ResponsiveContainer width="100%" height={220}>
           <BarChart
             data={countries}
@@ -77,6 +78,7 @@ export default function CountryStats({ title, countries }: CountryStatProps) {
                             height: "1.5em",
                             borderRadius: "4px",
                           }}
+                          alt={`Flag of ${country?.country}`}
                         />
                         <span
                           style={{

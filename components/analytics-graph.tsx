@@ -8,9 +8,6 @@ import {
   YAxis,
   ResponsiveContainer,
   ReferenceLine,
-  Tooltip as RechartsTooltip,
-  ReferenceArea,
-  Line,
 } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -19,11 +16,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { Button } from "@/components/ui/button";
-import {
-  Calendar1Icon,
-  LucideAArrowDown,
-  LucideChevronDown,
-} from "lucide-react";
+import { Calendar1Icon, LucideChevronDown } from "lucide-react";
 
 import {
   Popover,
@@ -47,7 +40,7 @@ const data = [
   { month: "Dec", value: 3100 },
 ];
 
-export function AnalyticsChart() {
+export default function AnalyticsChart() {
   const [selectedMonth, setSelectedMonth] = useState("Sept");
 
   const selectedData = data.find((d) => d.month === selectedMonth);
