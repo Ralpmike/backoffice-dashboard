@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { LucideChevronRight, TrendingUp } from "lucide-react";
+import { LucideChevronRight } from "lucide-react";
 import {
   BarChart,
   Bar,
@@ -26,7 +26,7 @@ interface CountryStatProps {
 
 export default function CountryStats({ title, countries }: CountryStatProps) {
   return (
-    <Card className="bg-primary rounded-[2rem] border-transparent">
+    <Card className="bg-primary rounded-[32px] border-transparent">
       <CardHeader className="flex flex-row items-center justify-between">
         <CardTitle className="text-dark-green text-lg font-semibold">
           {title}
@@ -67,22 +67,25 @@ export default function CountryStats({ title, countries }: CountryStatProps) {
                         style={{
                           display: "flex",
                           alignItems: "center",
-                          gap: "1rem",
+                          gap: "12px",
                         }}
                       >
-                        <ReactCountryFlag
-                          countryCode={country?.code || ""}
-                          svg
-                          style={{
-                            width: "1.5em",
-                            height: "1.5em",
-                            borderRadius: "4px",
-                          }}
-                          alt={`Flag of ${country?.country}`}
-                        />
+                        <div className="w-4 h-4 flex items-center">
+                          <ReactCountryFlag
+                            countryCode={country?.code || ""}
+                            svg
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              borderRadius: ".25rem",
+                            }}
+                            alt={`Flag of ${country?.country}`}
+                            aria-label={`Flag of ${country?.country}`}
+                          />
+                        </div>
                         <span
                           style={{
-                            fontSize: "14px",
+                            fontSize: ".875rem",
                             color: "#1f2937", // Tailwind's gray-800
                           }}
                         >
@@ -101,7 +104,7 @@ export default function CountryStats({ title, countries }: CountryStatProps) {
                 const { country, visitors } = payload[0].payload;
                 return (
                   <div className="bg-white shadow-md border text-sm p-2 rounded-md">
-                    <p className="font-normal texr-[18px]">{country}</p>
+                    <p className="font-normal texr-[1.125rem]">{country}</p>
                     <p>{visitors} visitors</p>
                   </div>
                 );

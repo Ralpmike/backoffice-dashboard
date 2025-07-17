@@ -44,7 +44,7 @@ export function AppSidebar() {
               <p className="font-semibold text-lg flex items-center gap-1">
                 PiggyCanvas Inc <CheckIcon className="w-4 h-4" />
               </p>
-              <p className="text-sm text-lighter-green">Sophia Williamson</p>
+              <p className="text-sm text-metrics">Sophia Williamson</p>
             </div>
           </div>
           {isMobile && (

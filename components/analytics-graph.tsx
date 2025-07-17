@@ -8,6 +8,7 @@ import {
   YAxis,
   ResponsiveContainer,
   ReferenceLine,
+  Tooltip as RechartsTooltip,
 } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
@@ -24,6 +25,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useState } from "react";
+import { Tooltip } from "@radix-ui/react-tooltip";
 
 const data = [
   { month: "Jan", value: 2700 },
@@ -128,15 +130,22 @@ export default function AnalyticsChart() {
                 tickFormatter={(value) => `${value / 1000}k`}
                 domain={[0, "dataMax + 1000"]}
               />
-              <ChartTooltip
-                content={
-                  <ChartTooltipContent
-                    formatter={(value) => [`$${value.toLocaleString()}.00`]}
-                    indicator="line"
-                    labelClassName="font-semibold"
-                    className="bg-dark-green text-white text-center text-xs px-2 py-4 rounded-sm shadow"
-                  />
-                }
+              t
+              <RechartsTooltip
+                cursor={{ fill: "#e5e7eb" }}
+                content={({ payload }) => {
+                  console.log("payload", payload);
+                  if (!payload || Object.keys(payload).length === 0)
+                    return null;
+                  const { value } = payload[0].payload;
+                  return (
+                    <div className="bg-dark-green px-4 py-[10px] text-white shadow-md border text-sm  rounded-md">
+                      <p className="font-semibold">
+                        ${value.toLocaleString()}.00
+                      </p>
+                    </div>
+                  );
+                }}
               />
               {selectedData && (
                 <>
