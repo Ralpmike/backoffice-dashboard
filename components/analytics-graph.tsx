@@ -53,12 +53,13 @@ export function AnalyticsChart() {
   const selectedData = data.find((d) => d.month === selectedMonth);
   return (
     <Card className="bg-primary border-transparent">
-      <CardHeader className="flex flex-row items-center justify-between pb-4">
+      <CardHeader className="flex flex-row items-center justify-between pb-4 flex-wrap">
         <CardTitle className="text-2xl font-semibold">Analytics</CardTitle>
 
         <Popover>
           <PopoverTrigger asChild>
             <Button
+              aria-label="Select month range"
               variant="ghost"
               size="sm"
               className="text-gray-500 hover:text-gray-700 border-1 border-[#DFE5DA] rounded-full p-4 items-center gap-2"
@@ -71,6 +72,7 @@ export function AnalyticsChart() {
             <div className="grid grid-cols-3 gap-2">
               {data.map((item) => (
                 <Button
+                  aria-label={item.month}
                   key={item.month}
                   variant={item.month === selectedMonth ? "default" : "ghost"}
                   size="sm"
@@ -92,12 +94,13 @@ export function AnalyticsChart() {
               color: "#000",
             },
           }}
-          className="h-[300px] w-full"
+          className="h-[350px] w-full "
         >
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={data}
-              margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+              margin={{ top: 20, right: 0, left: 0, bottom: 5 }}
+              className="w-full"
             >
               <defs>
                 <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
@@ -138,7 +141,7 @@ export function AnalyticsChart() {
                     formatter={(value) => [`$${value.toLocaleString()}.00`]}
                     indicator="line"
                     labelClassName="font-semibold"
-                    className="bg-dark-green text-white text-center text-xs px-2 !w-fit py-4 rounded-sm shadow"
+                    className="bg-dark-green text-white text-center text-xs px-2 py-4 rounded-sm shadow"
                   />
                 }
               />

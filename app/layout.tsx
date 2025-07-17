@@ -1,20 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
-import { Sidebar } from "lucide-react";
+
 import { SidebarProvider } from "@/components/ui/sidebar";
-import App from "next/app";
+
 import { AppSidebar } from "@/components/app-sidebar";
 import AppBar from "@/components/app-bar";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
 
 const LeagueSpartan = League_Spartan({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -41,6 +37,12 @@ export const metadata: Metadata = {
     description:
       "Comprehensive business dashboard for managing employees, payments, and analytics.",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

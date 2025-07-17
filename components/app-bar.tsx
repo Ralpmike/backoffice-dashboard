@@ -17,6 +17,7 @@ function AppBar() {
         </div>
         <div className="flex items-center gap-4">
           <Button
+            aria-label="Notifications"
             variant="ghost"
             size="icon"
             className="rounded-full border-1 cursor-pointer"

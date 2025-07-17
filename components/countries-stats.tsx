@@ -32,7 +32,10 @@ export default function CountryStats({ title, countries }: CountryStatProps) {
           {title}
         </CardTitle>
         <Popover>
-          <Button className="text-light-green shadow-none !bg-none border border-[#d1d5db] rounded-full text-xs px-4 py-1 flex items-center gap-1 hover:bg-[#f3f4f6] transition ">
+          <Button
+            aria-label="View all"
+            className="text-light-green shadow-none !bg-none border border-[#d1d5db] rounded-full text-xs px-4 py-1 flex items-center gap-1 hover:bg-[#f3f4f6] transition "
+          >
             VIEW ALL{" "}
             <LucideChevronRight size={16} className="text-lighter-green" />
           </Button>

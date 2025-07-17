@@ -74,6 +74,9 @@ export function AppSidebar() {
                       className="text-sidebar-primary hover:bg-transparent  hover:text-nav data-[active=true]:bg-transparent data-[active=true]:text-nav active:bg-transparent active:text-nav py-6 "
                     >
                       <Link
+                        data-sidebar="menu-button"
+                        data-size="default"
+                        aria-label={item.title}
                         href={item.url}
                         className="flex items-center gap-3 font-medium px-3 py-6"
                       >
