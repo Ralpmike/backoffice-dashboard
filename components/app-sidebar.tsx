@@ -26,10 +26,10 @@ export function AppSidebar() {
   const { isMobile, setOpenMobile } = useSidebar();
   const pathname = usePathname();
   return (
-    <Sidebar className="border-r-0  !bg-[#032900]">
-      <SidebarHeader className="p-6 flex">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+    <Sidebar className="border-r-0  !bg-primary">
+      <SidebarHeader className="py-6 pl-6 flex">
+        <div className="flex items-center justify-between relative">
+          <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-white rounded-full overflow-hidden flex items-center justify-center">
               <Image
                 src="/assets/images/jeffery.jpg"
@@ -52,10 +52,10 @@ export function AppSidebar() {
               variant="ghost"
               size="icon"
               onClick={() => setOpenMobile(false)}
-              className="text-white hover:bg-green-600 md:hidden"
+              className="text-white hover:bg-green-600 md:hidden ml-auto absolute top-1 right-0"
               aria-label="Close sidebar"
             >
-              <X className="w-8 h-8" />
+              <X className="" size={28} />
             </Button>
           )}
         </div>

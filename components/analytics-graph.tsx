@@ -62,10 +62,10 @@ export function AnalyticsChart() {
               aria-label="Select month range"
               variant="ghost"
               size="sm"
-              className="text-gray-500 hover:text-gray-700 border-1 border-[#DFE5DA] rounded-full p-4 items-center gap-2"
+              className="text-[#586657] text-sm hover:text-gray-700 border-1 border-[#DFE5DA] rounded-full p-4 items-center gap-2"
             >
               <Calendar1Icon /> Select month range{" "}
-              <LucideChevronDown className="ml-2 h-4 w-4" />
+              <LucideChevronDown className=" h-6 w-6" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto bg-white border rounded-lg p-2">
@@ -76,7 +76,7 @@ export function AnalyticsChart() {
                   key={item.month}
                   variant={item.month === selectedMonth ? "default" : "ghost"}
                   size="sm"
-                  className="text-gray-500 hover:text-gray-700  p-4 items-center gap-2"
+                  className="text-gray-500 text-sm hover:text-gray-700  p-4 items-center gap-2"
                   onClick={() => setSelectedMonth(item.month)}
                 >
                   {item.month}
@@ -99,7 +99,7 @@ export function AnalyticsChart() {
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={data}
-              margin={{ top: 20, right: 0, left: 0, bottom: 5 }}
+              margin={{ top: 20, right: 10, left: -40, bottom: 5 }}
               className="w-full"
             >
               <defs>
