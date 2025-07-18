@@ -134,7 +134,6 @@ export default function AnalyticsChart() {
               <RechartsTooltip
                 cursor={{ fill: "#e5e7eb" }}
                 content={({ payload }) => {
-                  console.log("payload", payload);
                   if (!payload || Object.keys(payload).length === 0)
                     return null;
                   const { value } = payload[0].payload;
