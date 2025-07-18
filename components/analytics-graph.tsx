@@ -11,11 +11,7 @@ import {
   Tooltip as RechartsTooltip,
 } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
+import { ChartContainer } from "@/components/ui/chart";
 import { Button } from "@/components/ui/button";
 import { Calendar1Icon, LucideChevronDown } from "lucide-react";
 
@@ -25,7 +21,6 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useState } from "react";
-import { Tooltip } from "@radix-ui/react-tooltip";
 
 const data = [
   { month: "Jan", value: 2700 },

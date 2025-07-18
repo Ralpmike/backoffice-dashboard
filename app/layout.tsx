@@ -23,8 +23,10 @@ export const metadata: Metadata = {
   creator: "PiggyCanvas Inc",
   publisher: "PiggyCanvas Inc",
   robots: "index, follow",
+  metadataBase: new URL("https://backoffice-dashboard-six.vercel.app"),
   openGraph: {
     title: "PiggyCanvas Dashboard - Business Analytics & Management",
+    url: "https://backoffice-dashboard-six.vercel.app/dashboard",
     description:
       "Comprehensive business dashboard for managing employees, payments, and analytics.",
     type: "website",
